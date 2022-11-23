@@ -28,15 +28,14 @@ const  changeText = () => {
 }
 clickmebutton.addEventListener("click", changeText);
 
-function updateImage() {
-  const image = document.querySelectorAll("#shoppingCart");
-//  console.log(image);
-image.src = "images/shoppingCart.png";
-image.width=100;
-image.height=100;
-image.alt = "shopping cart icon";
-
-}
+const updateImage = (e) => {
+    // console.log(e.target.textContent)
+    const image = document.querySelector("#shoppingCart");
+    image.setAttribute("src", "images/shoppingCart.png");
+    image.setAttribute("width", "100");
+    image.setAttribute("height", "100");
+  };
+  clickMeButton.addEventListener("click", updateImage);
 
 const buttonContainer = document.querySelector(".button-container");
 
@@ -48,6 +47,10 @@ function changeBGCGreen(e)
     }
     buttonContainer.addEventListener("mouseover", changeBGCGreen);
 
+const changeTextcolor = (event) => {
 
+event.target.style.color = event.target.textContent;
 
+};
+buttonContainer.addEventListener("mouseover", changeTextcolor);
 
